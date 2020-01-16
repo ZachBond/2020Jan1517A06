@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="InheritanceDemo.Animals.Animal" Collapsed="true">
+    <Position X="12.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animals\Animal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InheritanceDemo.Animals.BassetHound" Collapsed="true">
+    <Position X="10.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animals\BassetHound.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InheritanceDemo.Animals.Chihuahua" Collapsed="true">
+    <Position X="15" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animals\Chihuahua.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InheritanceDemo.Animals.Dog" Collapsed="true">
+    <Position X="12.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animals\Dog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InheritanceDemo.Animals.GermanShepherd" Collapsed="true">
+    <Position X="14" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animals\GermanShepherd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InheritanceDemo.Animals.Poodle" Collapsed="true">
+    <Position X="11.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animals\Poodle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InheritanceDemo.Animals.Rottweiller" Collapsed="true">
+    <Position X="12.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animals\Rottweiller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InheritanceDemo.AnimalControlOfficer">
+    <Position X="10.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAgQAAAAAAAAAAAAAgQAAABAA=</HashCode>
+      <FileName>DogCatcher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InheritanceDemo.GameEngine">
+    <Position X="2.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAEAA=</HashCode>
+      <FileName>GameEngine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InheritanceDemo.GameElements.AbstractCell" Collapsed="true">
+    <Position X="2.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIEAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>GameElements\AbstractCell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InheritanceDemo.GameElements.BombCell" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>GameElements\BombCell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InheritanceDemo.GameElements.EmptyCell" Collapsed="true">
+    <Position X="2.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>GameElements\EmptyCell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InheritanceDemo.GameElements.GameBoard">
+    <Position X="4.5" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>QCAAAAAAAgAAgAAAAAAAAAAEAAQAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>GameElements\GameBoard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InheritanceDemo.GameElements.WarningCell" Collapsed="true">
+    <Position X="5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>GameElements\WarningCell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InheritanceDemo.GameUI.GameConsole" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="6" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAKAAAAAAAAAABAAAAAAAAIAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameUI\GameConsole.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="InheritanceDemo.GameUI.IUserInterface">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAgAAABAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameUI\IUserInterface.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

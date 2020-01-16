@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="OOPSVehicles.Entities.Aviation">
+    <Position X="1" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAABAACAAEAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Aviation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOPSVehicles.Entities.Car">
+    <Position X="5.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAEAAEAAAAAAACAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Entities\Car.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOPSVehicles.Entities.Marine">
+    <Position X="8.25" Y="4.75" Width="1.5" />
+    <InheritanceLine Type="OOPSVehicles.Entities.Vehicle" ManuallyRouted="true">
+      <Path>
+        <Point X="4.5" Y="3.468" />
+        <Point X="4.5" Y="4.364" />
+        <Point X="9" Y="4.364" />
+        <Point X="9" Y="4.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAQAAAAAAEAAAAAAACAAAAAAAABAAAAAAAAAI=</HashCode>
+      <FileName>Entities\Marine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOPSVehicles.Entities.Service">
+    <Position X="3.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAEAAAAAAAAAAAAAAAAgAAAABAAAAA=</HashCode>
+      <FileName>Entities\Service.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOPSVehicles.Entities.Vehicle">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAIAAIEAAAAIEAAAAAAAAAQ=</HashCode>
+      <FileName>Entities\Vehicle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOPSVehicles.EntityResources.MakeModel">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAgAAAIABIA=</HashCode>
+      <FileName>EntityResources\MakeModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="OOPSVehicles.EntityResources.Fuel">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIEAIQAAQAAAQAAAAwAAAEAAAAAIAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>EntityResources\Fuel.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
