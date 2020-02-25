@@ -1,0 +1,71 @@
+﻿@{
+    Layout = "~/_Layout.cshtml";
+    Page.Title = string.Format("Exercise04 - {0}", "Ex04");
+    //retrieving artist name and populating varible
+    var aName = Request.Form["AlbumSearch"];
+
+
+    var partialstring = "%" + aName + "%";
+    var db = Database.Open("Chinook");
+}
+@section banner
+    {
+    <h1>Exercise04: Update and Delete  </h1>
+}
+
+<div class="form-group">
+    <form id="ex4form" method="post">
+        <div class="offset-1">
+            <label id="lblalbum" for="AlbumSearch">Search for an Artist: </label>
+            <input type="text" id="AlbumSearch" name="AlbumSearch" value="@aName" />
+            <button type="submit" class="btn-primary btn" id="thebutton" name="button">
+                Submit
+            </button>
+        </div>
+        <div class="offset-2">
+            @if (IsPost)
+            {
+                if (string.IsNullOrEmpty(aName))
+                {
+                    <p style="color:firebrick">Please enter an album name</p>
+                }
+                else
+                {
+                    var artistsearch = @"SELECT AlbumId, Title, ArtistId, ReleaseYear, ReleaseLabel
+                                       FROM Albums
+                                       WHERE Title like @0";
+
+                    var execute = db.Query(artistsearch, partialstring);
+
+                    if (execute.Count() == 0)
+                    {
+                        <p style="color:firebrick">This artist has no albums sorry </p>
+                    }
+                    else
+                    {
+                        var grid = new WebGrid(execute, rowsPerPage: 5);
+                        grid.GetHtml("table table-bordered table-striped table-hover",
+                            mode: WebGridPagerModes.All,
+                            lastText: "Last",
+                            firstText: "First",
+                            columns: grid.Columns(
+                            grid.Column(columnName: "AlbumId", header: "ID"),
+                            grid.Column(columnName: "Title"),
+                            grid.Column(columnName: "ArtistId", header: "Cat"),
+                            grid.Column(columnName: "ReleaseYear", header: "$"),
+                            grid.Column(columnName: "ReleaseLabel", header: "UOS"),
+                            grid.Column(header: "", format:@<text><a href="~/ExercisePages/Exercise04_B.cshtml?aid=@item.AlbumId">Edit</a></text>)));
+                    }
+                }
+         }
+        </div>
+        <script type="text/javascript">
+            var links = $('a[href*=page], a[href*=sort]'), form = $('form');
+            links.click(function () {
+                form.attr("action", this.href);
+                $(this).attr("href", "javascript:");
+                form.submit();
+            });
+        </script>
+    </form>
+</div>

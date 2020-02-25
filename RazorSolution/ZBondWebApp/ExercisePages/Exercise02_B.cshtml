@@ -1,0 +1,79 @@
+﻿@{
+    Layout = "~/_Layout.cshtml";
+    Page.Title = string.Format("Exercise02 - {0}", "Ex02");
+    //retrieving artist name and populating varible
+    var aName = Request.QueryString["aName"];
+
+    if (string.IsNullOrEmpty(aName))
+    {
+        //if no value passes through , keep on page A that they came from
+        Response.Redirect("Exercise02_A");
+    }
+    var partialstring = "%" + aName + "%"; 
+    var db = Database.Open("Chinook");
+    var sqlcommand = @"SELECT ArtistId, Name
+                        FROM Artists
+                        WHERE Name like @0
+                        ORDER BY Name";
+    var execute = db.Query(sqlcommand, partialstring);
+
+}
+
+@section banner
+    {
+    <h1>Exercise02_B:  Product Edit</h1>
+}
+
+@if (IsPost)
+{
+    var artists = Request.Form["dropdownlist"];
+
+    if (artists.Equals("0"))
+    {
+        <p style="color:firebrick">Please select an artist</p>
+    }
+    else
+    {
+        var sqlartistcommand = @"Select AlbumId
+                                 From Albums
+                                 Where ArtistId = @0";
+        var executealbum = db.Query(sqlartistcommand,artists);
+
+        if(executealbum.Count() == 0)
+        {
+            <p style="color:firebrick">There are no albums yet to be released by this artist</p>
+        }
+        else
+        {
+            Response.Redirect("Exercise02_C?aid=" + artists);
+        }
+    }
+}
+else
+{
+    
+}
+<!-- select has id and a name. form has id and method. option has value. label just has id and for -->
+<form id="pageb" method="post">
+    <label id="lblartistname" name="artistname" value="artistname" />
+    <select id="dropdownlist" name="dropdownlist">
+        <option value="0">Select an Artist</option>
+        @foreach (var item in execute)
+        {
+            if (item.ArtistId.ToString() == aName)
+            {
+                <option value="@item.ArtistId" selected="@item.Name">@item.Name</option>
+            }
+            else
+            {
+                <option value="@item.ArtistId">@item.Name</option>
+            }
+        }
+    </select>
+    <button class="btn-primary" id="theButton" name="theButton" value="Fetch Album">
+        Fetch Album
+    </button>
+</form>
+
+
+

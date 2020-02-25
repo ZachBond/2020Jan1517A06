@@ -1,0 +1,69 @@
+﻿@{
+    Layout = "~/_Layout.cshtml";
+    Page.Title = string.Format("Exercise 02 - {0}", "Ex02");
+
+    var db = Database.Open("Chinook");
+    var sqlcommand = @"SELECT ArtistId
+                      FROM Artists
+                      WHERE Name like @0";
+    var artist = "";
+
+
+}
+
+@section banner
+{
+    <h1>Exercise 2: Database Query</h1>
+}
+
+@if (IsPost)
+{
+    var thebutton = Request.Form["theButton"];
+    artist = Request.Form["ArtistSearch"];
+    if (thebutton.Equals("Fetch"))
+    {
+        //when the button is hit we need validation is name was entered.
+        if (string.IsNullOrEmpty("ArtistSearch"))
+        {
+            <p style="color:firebrick">Please enter an artist name</p>
+        }
+        else
+        {
+            //if there is a name entered...search database
+            var partialstring = "%" + artist + "%";
+            var execute = db.Query(sqlcommand, partialstring);
+
+            if (execute.Count() == 0)
+            {
+                <p style="color:firebrick">There were no artists with that name. Please try again</p>
+            }
+            else
+            {
+                //redirect to next page
+                Response.Redirect("Exercise02_B?aName=" + artist);
+            }
+        }
+    }
+}
+else
+{
+    string.IsNullOrEmpty("ArtistSearch");
+}
+
+
+
+<form id="queryform" method="post">
+    <div class="col-3 offset-3">
+        <label id="lblArtistSearh" for="ArtistSearch"> Search for an artist: </label><br />
+
+        <input type="text" id="ArtistSearch" name="ArtistSearch" value="@artist" />
+
+        <button class="btn-primary" id="theButton" name="theButton" value="Fetch">
+            Fetch Artist
+        </button>
+    </div>
+</form>
+
+
+
+

@@ -1,0 +1,98 @@
+﻿@{
+    Layout = "~/_Layout.cshtml";
+    Page.Title = string.Format("Exercise01 - {0}", "Ex01");
+
+    var enteredname = "";
+    var thebutton = Request.Form["theButton"];
+    string choices = "";
+}
+
+@section banner
+    {
+    <h1>Exercise01: Basic Form Processing </h1>
+}
+
+@if (IsPost)
+    {
+        enteredname = Request.Form["NameEntered"];
+        choices = Request.Form["MealCategory"];
+        if (thebutton.Equals("Submit"))
+        {
+            if (string.IsNullOrEmpty(enteredname) & choices.IsEmpty())
+            {
+                <div class="offset-2">
+                    <p style="color:fuchsia; font-size: large">
+                        Sorry, you are required to enter a name in the box and a meal choice
+                    </p>
+                </div>
+                choices = "";
+            }
+            else if (!string.IsNullOrEmpty(enteredname) & choices.IsEmpty())
+            {
+                <div class="offset-2">
+                    <p style="color:firebrick; font-size: x-large">
+                        Sorry @enteredname, you are required to enter in a meal choice.
+                    </p>
+                </div>
+            }
+            else if (string.IsNullOrEmpty(enteredname) & !choices.IsEmpty())
+            {
+                <div class="offset-2">
+                    <p style="color:firebrick; font-size: x-large">
+                        Sorry, you are required to enter in your name.
+                    </p>
+                </div>
+                choices = "";
+            }
+            else
+            {
+                <p>
+                    @enteredname , I see you like to enjoy the following meals:
+                    <ul>
+                        @foreach (var meal in choices.Split(','))
+                        {
+                            <li>@meal</li>
+                        }
+                    </ul>
+                </p>
+            }
+        }
+        else
+        {
+            choices = "";
+            enteredname = "";
+        }
+ }
+ else
+ {
+    choices = "";
+ }
+
+
+
+
+
+<form id="EX01" method="post">
+    <div class="row">
+        <div class="col-3">
+            <blockquote>Please enter your name: </blockquote>
+            <input type="text" id="NameEntered" name="NameEntered"
+                   value="@enteredname" /> <br /><br />
+            <input type="submit" class="btn btn-primary" id="theButton" name="theButton" value="Submit" />
+            &nbsp;&nbsp;
+            <input type="submit" class="btn" id="theButton" name="theButton" value="Reset" />
+        </div>
+
+        <div class="col-9">
+            <label id="lblMealChoice" for="MealCategory">Please select the meals of your choice. </label><br />
+            <input type="checkbox" id="MealCategory" name="MealCategory"
+                   value="Steak" />Steak <br />
+            <input type="checkbox" id="MealCategory" name="MealCategory"
+                   value="SeaBiscuits" />SeaBiscuits<br />
+            <input type="checkbox" id="MealCategory" name="MealCategory"
+                   value="Veggies" />Veggies<br />
+            <input type="checkbox" id="MealCategory" name="MealCategory"
+                   value="Pastry" />Pastry
+        </div>
+    </div>
+</form>
