@@ -43,6 +43,7 @@
                     }
                     else
                     {
+                        Response.Redirect("Exercise04_B");
                         var grid = new WebGrid(execute, rowsPerPage: 5);
                         grid.GetHtml("table table-bordered table-striped table-hover",
                             mode: WebGridPagerModes.All,
@@ -54,7 +55,8 @@
                             grid.Column(columnName: "ArtistId", header: "Cat"),
                             grid.Column(columnName: "ReleaseYear", header: "$"),
                             grid.Column(columnName: "ReleaseLabel", header: "UOS"),
-                            grid.Column(header: "", format:@<text><a href="~/ExercisePages/Exercise04_B.cshtml?aid=@item.AlbumId">Edit</a></text>)));
+                            grid.Column(header: "", format:@<text>
+                            <a href="~/ExercisePages/Exercise04_B.cshtml?aid=@item.AlbumId">Edit</a></text>)));
                     }
                 }
          }

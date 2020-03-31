@@ -106,16 +106,19 @@
     if (string.IsNullOrEmpty(aName))
     {
         //if no value passes through , keep on page A that they came from
-        Response.Redirect("Exercise02_A");
+        Response.Redirect("Exercise04_A");
     }
-    var partialstring = "%" + aName + "%";
-    var db = Database.Open("Chinook");
-    var sqlcommand = @"SELECT ArtistId, Name
+
+    
+    
+        var partialstring = "%" + aName + "%";
+        var db = Database.Open("Chinook");
+        var sqlcommand = @"SELECT ArtistId, Name
                 FROM Artists
                 WHERE Name like @0
                 ORDER BY Name";
-    var execute = db.Query(sqlcommand, partialstring);
-
+        var execute = db.Query(sqlcommand, partialstring);
+    
 }
 
 @section banner
